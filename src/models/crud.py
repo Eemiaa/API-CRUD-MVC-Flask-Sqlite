@@ -1,8 +1,12 @@
-from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.types import Date
+from config import Base
 
-db = SQLAlchemy() #criando o modelo para inserir no banco de dados
-
-class Inserttable(db.Model):
+class Inserttable(Base):
     __tablename__ = 'inserttable'
-    id = db.column(db.Integer, primary_key=True, autoincrement=True)
     
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    nome = Column(String)
+    date = Column(Date)
+    email = Column(String)
+    telefone = Column(String)

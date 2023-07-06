@@ -1,9 +1,9 @@
 from flask import Blueprint
-from controllers.crudController import create, read, update, delete
+import controllers.crudController as contr
 
 blueprint = Blueprint('blueprint', __name__)
 
-blueprint.route('/create', methods=['GET'])(create)
-blueprint.route('/read', methods=['GET'])(read)
-blueprint.route('/update', methods=['GET'])(update)
-blueprint.route('/delete', methods=['GET'])(delete)
+blueprint.route('/create', methods=['POST'])(contr.create)
+#blueprint.route('/read', methods=['GET'])(contr.read)
+#blueprint.route('/update', methods=['GET'])(contr.update)
+#blueprint.route('/delete', methods=['GET'])(contr.delete)
