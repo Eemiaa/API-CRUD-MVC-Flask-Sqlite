@@ -1,10 +1,10 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.types import Date
-from config import Base
+from database.config import Base
 
 class Inserttable(Base):
     __tablename__ = 'inserttable'
-    
+
     id = Column(Integer, primary_key=True, autoincrement=True)
     nome = Column(String)
     date = Column(Date)

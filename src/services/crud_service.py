@@ -1,6 +1,6 @@
 import json
 from models import crud
-from config import engine
+from database.config import engine
 
 def create():
     try:
