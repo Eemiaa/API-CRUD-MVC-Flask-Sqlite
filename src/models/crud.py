@@ -2,8 +2,8 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.types import Date
 from database.config import Base
 
-class Inserttable(Base):
-    __tablename__ = 'inserttable'
+class Conta(Base):
+    __tablename__ = 'conta'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     nome = Column(String)
