@@ -6,7 +6,7 @@
 
 ### What's it?
 
-This is an MVC API developed through the Graph Theory course that performs basic operations for creating and manipulating graphs, in addition to other features (such as search) that will be inserted as the course progresses.
+It is an MVC API developed in Python, using the Flask framework, SqlAlchemy (SQL object-relational mapping library) and the Sqlite database. The API performs basic Create, Read, Update, and Remove (CRUD) functions.
 
 </br></br>
 <hr>
