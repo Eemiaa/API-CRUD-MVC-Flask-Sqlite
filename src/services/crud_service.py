@@ -1,6 +1,8 @@
 import datetime
 from models import crud
 from database.config import engine, SessionLocal
+from models.baseFunctions import BaseFunctions as bf
+from sqlalchemy import update as up
 
 db = SessionLocal()
 
@@ -23,12 +25,26 @@ def create():
 def read():
     try:
         db_record = db.query(crud.Conta).filter(crud.Conta.id == 2).first()
-        print(db_record)
-        return 'Sucess', 'Conta deletada com sucesso.'
+
+        return 'Sucess', bf.to_json(db_record)
+    
     except Exception as e:
         print(e)
+
         return 'Error', 'Não foi possível obter conta.'
-       
+
+def update():
+    try:
+        db_record = db.query(crud.Conta).filter(crud.Conta.id == 2).first()
+        db_record.nome = "teste2"
+
+        db.commit()
+        return 'Sucess', 'Nome atualizado com sucesso.'
+    
+    except Exception as e:
+        print(e)
+        return 'Error', 'Não foi possível fazer o update.'
+
 def delete():
     try:
         db_record = db.query(crud.Conta).filter(crud.Conta.id == 1).first()
