@@ -1,4 +1,4 @@
-# CRUD-MVC-Flask-Sqlite
+# API-CRUD-MVC-Flask-Sqlite
 
 <img height="200em" style="border-radius:50px;" align="right" src="https://remimercier.com/media/2017/what-is-an-api-remi-mercier.gif" >
 
