@@ -8,6 +8,6 @@ class Conta(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     nome = Column(String)
-    date = Column(Date)
+    nascimento = Column(Date)
     email = Column(String)
     telefone = Column(String)

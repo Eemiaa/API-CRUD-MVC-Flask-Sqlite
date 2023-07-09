@@ -6,13 +6,13 @@ from sqlalchemy import update as up
 
 db = SessionLocal()
 
-def create():
+def create(nome, nascimento, email, telefone):
     try:
         db_record = crud.Conta(
-                    nome = "teste",
-                    date = datetime.date.today(),
-                    email = "teste@gmail.com",
-                    telefone = 91984101102,
+                    nome = nome,
+                    nascimento = nascimento,
+                    email = email,
+                    telefone = telefone,
                 )
         print(db_record)
         db.add(db_record)
@@ -22,9 +22,9 @@ def create():
         print(e)
         return 'Error', 'Não foi possível criar conta.'
 
-def read():
+def read(id):
     try:
-        db_record = db.query(crud.Conta).filter(crud.Conta.id == 2).first()
+        db_record = db.query(crud.Conta).filter(crud.Conta.id == id).first()
 
         return 'Sucess', bf.to_json(db_record)
     
@@ -33,10 +33,10 @@ def read():
 
         return 'Error', 'Não foi possível obter conta.'
 
-def update():
+def update(id, nome):
     try:
-        db_record = db.query(crud.Conta).filter(crud.Conta.id == 2).first()
-        db_record.nome = "teste2"
+        db_record = db.query(crud.Conta).filter(crud.Conta.id == id).first()
+        db_record.nome = nome
 
         db.commit()
         return 'Sucess', 'Nome atualizado com sucesso.'
@@ -45,9 +45,9 @@ def update():
         print(e)
         return 'Error', 'Não foi possível fazer o update.'
 
-def delete():
+def delete(id):
     try:
-        db_record = db.query(crud.Conta).filter(crud.Conta.id == 1).first()
+        db_record = db.query(crud.Conta).filter(crud.Conta.id == id).first()
         db.delete(db_record)
         db.commit()
         return 'Sucess', 'Conta deletada com sucesso.'

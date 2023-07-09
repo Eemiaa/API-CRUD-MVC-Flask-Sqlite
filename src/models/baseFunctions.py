@@ -4,3 +4,4 @@ class BaseFunctions():
         indesejado = [*objeto.keys( )][0]
         objeto.pop(indesejado)
         return objeto
+    
